@@ -1,81 +1,73 @@
-// This file implements the utility functions for the Connect Four game
 
-// Check for a winner in the Connect Four board
-export const checkForWinner = (board) => {
+const connectFourUtils = {
+  // Deep clone a 2D array (game board)
+  deepClone: (board) => {
+    return board.map(column => [...column]);
+  },
+  
+  // Check if the board has a winner or is a draw
+  checkForWinner: (board) => {
     // Check for horizontal wins
-    for (let col = 0; col < board.length - 3; col++) {
-      for (let row = 0; row < board[0].length; row++) {
-        if (board[col][row] !== null &&
-            board[col][row] === board[col+1][row] &&
-            board[col][row] === board[col+2][row] &&
-            board[col][row] === board[col+3][row]) {
-          return board[col][row];
+    for (let row = 0; row < 6; row++) {
+      for (let col = 0; col < 4; col++) {
+        const cell = board[col][row];
+        if (cell !== null &&
+            cell === board[col+1][row] &&
+            cell === board[col+2][row] &&
+            cell === board[col+3][row]) {
+          return cell; // Return the winning color
         }
       }
     }
-  
+    
     // Check for vertical wins
-    for (let col = 0; col < board.length; col++) {
-      for (let row = 0; row < board[0].length - 3; row++) {
-        if (board[col][row] !== null &&
-            board[col][row] === board[col][row+1] &&
-            board[col][row] === board[col][row+2] &&
-            board[col][row] === board[col][row+3]) {
-          return board[col][row];
+    for (let col = 0; col < 7; col++) {
+      for (let row = 0; row < 3; row++) {
+        const cell = board[col][row];
+        if (cell !== null &&
+            cell === board[col][row+1] &&
+            cell === board[col][row+2] &&
+            cell === board[col][row+3]) {
+          return cell; // Return the winning color
         }
       }
     }
-  
-    // Check for diagonal wins (down-right)
-    for (let col = 0; col < board.length - 3; col++) {
-      for (let row = 0; row < board[0].length - 3; row++) {
-        if (board[col][row] !== null &&
-            board[col][row] === board[col+1][row+1] &&
-            board[col][row] === board[col+2][row+2] &&
-            board[col][row] === board[col+3][row+3]) {
-          return board[col][row];
+    
+    // Check for diagonal wins (bottom-left to top-right)
+    for (let col = 0; col < 4; col++) {
+      for (let row = 3; row < 6; row++) {
+        const cell = board[col][row];
+        if (cell !== null &&
+            cell === board[col+1][row-1] &&
+            cell === board[col+2][row-2] &&
+            cell === board[col+3][row-3]) {
+          return cell; // Return the winning color
         }
       }
     }
-  
-    // Check for diagonal wins (up-right)
-    for (let col = 0; col < board.length - 3; col++) {
-      for (let row = 3; row < board[0].length; row++) {
-        if (board[col][row] !== null &&
-            board[col][row] === board[col+1][row-1] &&
-            board[col][row] === board[col+2][row-2] &&
-            board[col][row] === board[col+3][row-3]) {
-          return board[col][row];
+    
+    // Check for diagonal wins (top-left to bottom-right)
+    for (let col = 0; col < 4; col++) {
+      for (let row = 0; row < 3; row++) {
+        const cell = board[col][row];
+        if (cell !== null &&
+            cell === board[col+1][row+1] &&
+            cell === board[col+2][row+2] &&
+            cell === board[col+3][row+3]) {
+          return cell; // Return the winning color
         }
       }
     }
-  
-    // Check for a draw (board is full)
-    let isFull = true;
-    for (let col = 0; col < board.length; col++) {
-      for (let row = 0; row < board[0].length; row++) {
-        if (board[col][row] === null) {
-          isFull = false;
-          break;
-        }
-      }
-      if (!isFull) break;
+    
+    // Check if the board is full (draw)
+    const isFull = board.every(column => column.every(cell => cell !== null));
+    if (isFull) {
+      return 'draw';
     }
-    if (isFull) return 'draw';
-  
+    
     // No winner yet
     return null;
-  };
-  
-  // Deep clone an array or object
-  export const deepClone = (obj) => {
-    return JSON.parse(JSON.stringify(obj));
-  };
-  
-  // Add these utilities to the window object to match the requirements
-  window.connectFour = {
-    checkForWinner,
-    deepClone
-  };
-  
-  export default window.connectFour;
+  }
+};
+
+export default connectFourUtils;
