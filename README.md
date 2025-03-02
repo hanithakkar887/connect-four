@@ -13,19 +13,28 @@ This project is a web-based implementation of the classic Connect Four game. It 
 
 ## Project Structure
 ```
-connect-four/
-│── src/
+cconnect-four/
+├── src/
 │   ├── components/
-│   │   ├── ConnectFour.js  # Main game component
+│   │   └── ConnectFour.jsx  # Main game component
 │   ├── utils/
-│   │   ├── connectFourUtils.js  # Utility functions for game logic
-│   ├── assets/
-│   │   ├── sounds/  # Sound files (drop, win, draw, background music)
-│── public/
-│── index.html
-│── styles.css
-│── package.json
-│── README.md
+│   │   └── connectFourUtils.js  # Utility functions for game logic
+│   ├── App.jsx  # Main app file
+│   ├── main.jsx  # Vite entry point
+│   ├── index.css
+├── public/
+│   ├── sounds/
+│   │   ├── drop.mp3
+│   │   ├── win.mp3
+│   │   ├── draw.mp3
+│   │   └── background-music.mp3
+│   ├── favicon.ico
+│   ├── vite.svg
+│   └── index.html
+├── package.json
+├── vite.config.js  # Vite configuration file
+├── README.md
+
 ```
 
 ## Installation & Setup
