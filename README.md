@@ -1,12 +1,82 @@
-# React + Vite
+# Connect Four Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This project is a web-based implementation of the classic Connect Four game. It allows two players to take turns dropping tokens into a 7x6 grid until one player achieves four in a row (horizontally, vertically, or diagonally) or the board fills up, resulting in a draw. The game includes sound effects, background music, and a theme toggle (dark/light mode) for an enhanced user experience.
 
-Currently, two official plugins are available:
+## Features
+- **Two-player gameplay**: Players take turns dropping red and yellow tokens into the board.
+- **Winner detection**: The game checks for horizontal, vertical, and diagonal four-in-a-row victories.
+- **Draw detection**: If the board fills up without a winner, the game declares a draw.
+- **Sound effects & music**: Includes sounds for token drops, wins, and draws, along with background music.
+- **Dark & light mode**: Players can toggle between dark and light themes for better visual experience.
+- **Restart functionality**: Players can reset the game at any time.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Structure
+```
+connect-four/
+│── src/
+│   ├── components/
+│   │   ├── ConnectFour.js  # Main game component
+│   ├── utils/
+│   │   ├── connectFourUtils.js  # Utility functions for game logic
+│   ├── assets/
+│   │   ├── sounds/  # Sound files (drop, win, draw, background music)
+│── public/
+│── index.html
+│── styles.css
+│── package.json
+│── README.md
+```
 
-## Expanding the ESLint configuration
+## Installation & Setup
+1. **Clone the repository**:
+   ```sh
+   git clone https://github.com/hanithakkar887/connect-four.git
+   ```
+2. **Navigate to the project directory**:
+   ```sh
+   cd connect-four
+   ```
+3. **Install dependencies**:
+   ```sh
+   npm install
+   ```
+4. **Start the development server**:
+   ```sh
+   npm run dev
+   ```
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Usage
+1. Click on a column to drop a token.
+2. Players take turns placing tokens until a winner is declared or the game results in a draw.
+3. Use the **Restart** button to reset the game at any time.
+4. Toggle sound effects, background music, and dark mode using the available buttons.
+
+## Utility Functions (`connectFourUtils.js`)
+- **`checkForWinner(board)`**: Scans the board for a winner or a draw and returns the result.
+- **`deepClone(obj)`**: Creates a deep copy of the board to maintain immutability.
+
+## Technologies Used
+- React.js (for UI components)
+- JavaScript (game logic)
+- CSS (styling, dark/light mode)
+- Lucide-react (icons)
+- HTML5 (structure)
+
+## Future Enhancements
+- Add AI opponent for single-player mode.
+- Implement animations for smoother gameplay.
+- Enhance UI with more visual effects.
+- Deploy the game online for public access.
+
+## Deployed Link
+Check out the live version here: [Connect Four Game](https://connect-four-rust.vercel.app/)
+
+
+## Screenshot
+![Connect Four Game](./src/assets/connect-four-screenshot1.png)
+
+![Connect Four Game](./src/assets/connect-four-screenshot2.png)
+
+
