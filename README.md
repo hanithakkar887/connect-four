@@ -89,9 +89,12 @@ Check out the live version here: [https://connect-four-3d-v2.vercel.app/)
 ![Connect Four Game](./src/assets/connect-four-screenshot2.png)
 
 ## 📸 Screenshot
-
-!(<img width="1881" height="897" alt="image" src="https://github.com/user-attachments/assets/8b509134-1806-4c2f-b5dc-35b0af270fd3" />
+(<img width="1881" height="897" alt="image" src="https://github.com/user-attachments/assets/8b509134-1806-4c2f-b5dc-35b0af270fd3" />
 )
-
-
+## 📸 Screenshot
+(<img width="1894" height="914" alt="image" src="https://github.com/user-attachments/assets/63f14c16-62ad-42eb-9988-9e7fbd9832f5" />
+)
+## 📸 Screenshot
+(<img width="1889" height="883" alt="image" src="https://github.com/user-attachments/assets/1a331c6a-cb2c-42af-bcd8-b6446ae95820" />
+)
 
