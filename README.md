@@ -80,7 +80,7 @@ cconnect-four/
 - Deploy the game online for public access.
 
 ## Deployed Link
-Check out the live version here: [Connect Four Game](https://connect-four-rust.vercel.app/)
+Check out the live version here: [https://connect-four-3d-v2.vercel.app/)
 
 
 ## Screenshot
